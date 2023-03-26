@@ -57,28 +57,28 @@ void draw() {
    menu_title();
  } else if (state == "french_page"){
    french_page();  
-   image(cuisine, 400, 580, width/2, height/2);
+   image(cuisine, 400, 630, 540, 357);
  } else if (state == "chinese_page"){
    chinese_page();
-   image(cuisine, 400, 580, width/2, height/2);
+   image(cuisine, 400, 630, 500, 333);
  } else if (state == "japanese_page"){
    japanese_page();
-   image(cuisine, 400, 580, width/2, height/2);
+   image(cuisine, 400, 630, 500, 332);
  } else if (state == "italian_page"){
    italian_page();
-   image(cuisine, 400, 580, width/2, height/2);
+   image(cuisine, 400, 630, 500, 375);
  } else if (state == "mexican_page"){
    mexican_page();
-   image(cuisine, 400, 580, width/2, height/2);
+   image(cuisine, 400, 630, 500, 400);
  } else if (state == "indian_page"){
    indian_page();
-   image(cuisine, 400, 580, width/2, height/2);
+   image(cuisine, 400, 630, 400, 300);
  } else if (state == "irish_page"){
    irish_page();
-   image(cuisine, 400, 580, 550, 275);
+   image(cuisine, 400, 650, 550, 275);
  } else if (state == "american_page"){
    american_page();
-   image(cuisine, 400, 580, 559, 310);
+   image(cuisine, 400, 630, 559, 310);
  }
 }
 
@@ -144,9 +144,10 @@ void keyPressed(){
 
 void menu_title() {
   background(main);
-  textSize(16);
+  textSize(19);
   textAlign(CENTER, TOP);
-  text("Hello there! Welcome to my fully-fledged Food Cultural SlideShow! \n \nLet's take a quick trip around the world and learn about some of\n the various tasty cuisines from many different cultures!", 200, 200, 200, 250);
+  fill(#FFFAFA);
+  text("Hello there! Welcome to my fully-fledged Food Cultural SlideShow! \n \nLet's take a quick trip around the world and learn about some of\n the various tasty cuisines from many different cultures! \n \nLeft-Click to Scroll through the pages \n -OR- \n Press the 'R' key to visit a random page" , 200, 200, 400, 450);
   
   s1.play();
   s2.pause();
@@ -191,7 +192,7 @@ void chinese_page() {
 
 void japanese_page() {
   background(JPN);
-  text("Highly recognizable today, Japanese cuisine is one of the most essential cuisine ever. \n Mostly known for being eaten with chopsticks instead of the usual fork-and-knife, some of the most notable dishes enjoyed today are usually sushi and tofu. \n Also, not matter whatever else the dish is, one cannot forget the cup of hot green tea on the side as well!", 200, 200, 550, 750);
+  text("Highly recognizable today, Japanese cuisine is one of the most essential cuisine ever. \n Mostly known for being eaten with chopsticks instead of the usual fork-and-knife, some of the most notable dishes enjoyed today are usually sushi and tofu. \n Also, not matter whatever else the dish is, one cannot forget the cup of hot green tea on the side as well!", 200, 200, 600, 750);
   
   s4.play();
   s1.pause();
@@ -236,7 +237,7 @@ void mexican_page(){
 
 void indian_page(){
   background(IND);
-  text("Spanning back over 5000 years, India's food culture is said to be both highly religious and diversified. \n It consists of many vegetarian dishes, and while it does include meats as well, some religions such as Hinduism & Buddhism forbid the consumption of beef & pork. \n Finally, spices are also considered to be a key ingredient in many Indian cuisines such as turmeric & cumin, as it is used for creating bold and enhancing flavors within a dish.", 200, 200, 550, 750);
+  text("Spanning back over 5000 years, India's food culture is said to be both highly religious and diversified. \n It consists of many vegetarian dishes, and while it does include meats as well, some religions such as Hinduism & Buddhism forbid the consumption of beef & pork. \n Finally, spices are also considered to be a key ingredient in many Indian cuisines such as turmeric & cumin, as it is used for creating bold and enhancing flavors within a dish.", 200, 200, 575, 650);
   
   s7.play();
   s1.pause();
@@ -251,7 +252,7 @@ void indian_page(){
 
 void irish_page(){
   background(IRE);
-  text("Within the country of Ireland, its food culture is rich and varies based on its history, geography, and climate. \n Potatoes have long been known to be a key ingredient within an Irish diet, as well as beef and lamb being the most popular meats around for a tasty meat stew or sherpard pie. \n In addition, seafood is also popular due to the country's long coastline with oysters and salmons being a high delicacy. \nFinally, if its a refreshing drink that you're in the mood for, then one cannot recommend anything better than a jug of Guinness(dry stout beer)!", 200, 200, 550, 750);
+  text("Within the country of Ireland, its food culture is rich and varies based on its history, geography, and climate. \n Potatoes have long been known to be a key ingredient within an Irish diet, as well as beef and lamb being the most popular meats around for a tasty meat stew or sherpard pie. \n In addition, seafood is also popular due to the country's long coastline with oysters and salmon being a high delicacy. \nFinally, if its a refreshing drink that you're in the mood for, then one cannot recommend anything better than a jug of Guinness(dry stout beer)!", 200, 200, 550, 750);
   
   s8.play();
   s1.pause();
