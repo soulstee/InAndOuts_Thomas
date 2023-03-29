@@ -1,3 +1,9 @@
+/*
+Name: Thomas Garcia Mena
+Midterm Project: Food Cultural Sildeshow (HEADPHONES RECOMMENDED)
+Date: 03/27/23
+*/
+
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
