@@ -1,7 +1,7 @@
 //Name: Thomas Mena
 //Date: 03/09/2023
 //Sketch Description: Two arrays: ,One set as "Cube[]" and the other as "Sphere[]", are set to create mutiple streams of shapes to soar acrosss the canvas.
-// This sketch was based off the "Array Objects" example from the Learning Processing.com
+// This sketch was based off the "Array Objects" example from the Learning Processing.com (Link: http://learningprocessing.com/examples/chp09/example-09-09-array-objects)
 
 //Created the Cube and Sphere arrays;
 Cube[] cubes = new Cube[100];
