@@ -5,7 +5,7 @@ const int ButtonPin3 = 4;
 const int LED = 13;
 const int PiezoPin = 5;
 
-const int notes[] = {262, 294, 330, 349, 392, 440, 494, 523}; // These will play the following notes in order: C4, D4, and E4
+const int notes[] = {262, 294, 330}; // These will play the following notes in order: C4, D4, and E4
 const int noteDuration = 1000; // How long each note will play in milliseconds
 int currentNote = 0; // The index of the current note that is being played
 
