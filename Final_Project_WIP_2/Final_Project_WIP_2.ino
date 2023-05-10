@@ -10,7 +10,7 @@ const int E4 = 329;
 
 const int noteSequence[] = {C4, D4, E4, E4, D4, C4, D4, C4, C4, E4};
 const int sequenceLength = sizeof(noteSequence) / sizeof(int);
-int position = 0;
+int currentPosition = 0;
 
 bool GameWin;
 bool GameOver;
@@ -31,27 +31,15 @@ void loop() {
   if (GameOver) {
 
     if (GameWin) {
-      digitalWrite(LED, HIGH);
-      delay(500);
-      digitalWrite(LED, LOW);
-      delay(500);
+      flashLED(500);
     } else {
-      digitalWrite(LED, HIGH);
-      delay(100);
-      digitalWrite(LED, LOW);
-      delay(100);
-      digitalWrite(LED, HIGH);
-      delay(100);
-      digitalWrite(LED, LOW);
-      delay(100);
-      digitalWrite(LED, HIGH);
-      delay(100);
-      digitalWrite(LED, LOW);
-      delay(100);
+      flashLED(100);
+      flashLED(100);
+      flashLED(100);
     }
 
     delay(1000);
-    position = 0;
+    currentPosition = 0;
     GameWin = true;
     GameOver = false;
     playNoteAndSendPosition(noteSequence[0]);
@@ -77,24 +65,31 @@ void playNoteAndSendPosition(int note) {
 
 
 void playNoteAndAdvanceSequence() {
-  position++;
+  currentPosition++;
 
-  if (position == sequenceLength) {
+  if (currentPosition == sequenceLength) {
     GameWin = true;
     GameOver = true;
   } else {
-    playNoteAndSendPosition(noteSequence[position]);
+    playNoteAndSendPosition(noteSequence[currentPosition]);
   }
 }
 
 
 void checkNotePressed(int note) {
 
-  if (note == noteSequence[position]) {
+  if (note == noteSequence[currentPosition]) {
     playNoteAndAdvanceSequence();
   } else {
     GameWin = false;
     GameOver = true;
-    Serial.write(position);
+    Serial.write(currentPosition);
   }
+}
+
+void flashLED(int duration) {
+  digitalWrite(LED, HIGH);
+  delay(duration);
+  digitalWrite(LED, LOW);
+  delay(duration);
 }
