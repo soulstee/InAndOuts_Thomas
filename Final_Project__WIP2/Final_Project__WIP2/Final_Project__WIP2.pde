@@ -15,7 +15,7 @@ void setup() {
   img2 = loadImage("sequence2.jpg");
   img3 = loadImage("sequence3.jpg");
 
-  myPort = new Serial(this, "COM4", 9600);
+  myPort = new Serial(this, Serial.list()[0], 9600);
 }
 
 void draw() {
