@@ -18,6 +18,7 @@ void setup() {
   img2 = loadImage("sequence2.jpg");
   img3 = loadImage("sequence3.jpg");
 
+
   myPort = new Serial(this, Serial.list()[0], 9600);
 }
 
@@ -25,17 +26,28 @@ void draw() {
 
   while (myPort.available() > 0) {
     char inChar = (char) myPort.read();
+    println("Received character: " + inChar);
 
     if (inChar == '1') {
       buttonPressed1 = true;
+      buttonPressed2 = false;
+      buttonPressed3 = false;
+      println("Button 1 pressed");
     } else if (inChar == '2') {
+      buttonPressed1 = false;
       buttonPressed2 = true;
+      buttonPressed3 = false;
+      println("Button 2 pressed");
     } else if (inChar == '3') {
+      buttonPressed1 = false;
+      buttonPressed2 = false;
       buttonPressed3 = true;
+      println("Button 3 pressed");
     } else if (inChar == '0') {
       buttonPressed1 = false;
       buttonPressed2 = false;
       buttonPressed3 = false;
+      println("No buttons are pressed");
     }
   }
 
