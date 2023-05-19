@@ -1,7 +1,7 @@
 const int ButtonPin1 = 2;
 const int ButtonPin2 = 3;
 const int ButtonPin3 = 4;
-const int PiezoPin = 5;
+const int PiezoPin = 7;
 
 int buttonState1 = 0;
 int buttonState2 = 0;
@@ -26,30 +26,30 @@ void loop() {
   buttonState2 = digitalRead(ButtonPin2);
   buttonState3 = digitalRead(ButtonPin3);
 
-  if (buttonState1 == HIGH) {                     // If Push Button #1 is pressed...
-    for (int i = 0; i < 15; i++) {                // An array is made based from the number of notes in the sequence "int notes1[]"...
-      tone(PiezoPin, notes1[i], noteDuration);    // Data is being sent to the piezo to play each assigned note.
-      delay(noteDuration);                        // Specifies how long each note in the assigned sequence will play.
+  if (buttonState1 == HIGH) {
+    for (int i = 0; i < 15; i++) {
+      tone(PiezoPin, notes1[i], noteDuration);
+      delay(noteDuration);
+      Serial.write('1');
     }
-    Serial.write('1');                            // This value is assigned to send binary data to Processing for Push Button #1.
 
-  } else if ( buttonState2 == HIGH) {                     // If Push Button #2 is pressed...
-    for (int i = 0; i < 20; i++) {                        // An array is made based from the number of notes in the sequence "int notes2[]"...
-      tone(PiezoPin, notes2[i], noteDuration);            // Data is being sent to the piezo to play each assigned note.
-      delay(noteDuration);                                // Specifies how long each note in the assigned sequence will play.
+  } else if (buttonState2 == HIGH) {
+    for (int i = 0; i < 20; i++) {
+      tone(PiezoPin, notes2[i], noteDuration);
+      delay(noteDuration);
+      Serial.write('2');
     }
-    Serial.write('2');                                    // This value is assigned to send binary data to Processing for Push Button #2.
 
-  } else if (buttonState3 == HIGH) {                      // If Push Button #3 is pressed...
-    for (int i = 0; i < 22; i++) {                        // An array is made based from the number of notes in the sequence "int notes3[]"...
-      tone(PiezoPin, notes3[i], noteDuration);            // Data is being sent to the piezo to play each assigned note.
-      delay(noteDuration);                                // Specifies how long each note in the assigned sequence will play.
+  } else if (buttonState3 == HIGH) {
+    for (int i = 0; i < 22; i++) {
+      tone(PiezoPin, notes3[i], noteDuration);
+      delay(noteDuration);
+      Serial.write('3');
     }
-    Serial.write('3');                                    // This value is assigned to send binary data to Processing for Push Button #3.
 
-  } else {                    // Else, if no push buttons are pressed...
-    noTone(PiezoPin);         // The piezo will remain mute.
-    Serial.write('0');        // This value is assigned to send binary data to Processing for when no push buttons are in action.
+  } else {
+    noTone(PiezoPin);
+    Serial.write('0');
   }
-  delay(20);
+  delay(10);
 }

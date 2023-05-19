@@ -1,7 +1,7 @@
 const int ButtonPin1 = 2;
 const int ButtonPin2 = 3;
 const int ButtonPin3 = 4;
-const int PiezoPin = 5;
+const int PiezoPin = 7;
 
 int buttonState1 = 0;
 int buttonState2 = 0;
@@ -13,7 +13,7 @@ int notes3[] = {131, 880, 880, 659, 880, 880, 698, 880, 659, 880, 147, 1319, 131
 int noteDuration = 500;
 
 void setup() {
-  pinMode(ButtonPin1, INPUT);
+  pinMode(ButtonPin1, INPUT_PULLUP);
   pinMode(ButtonPin2, INPUT);
   pinMode(ButtonPin3, INPUT);
   pinMode(PiezoPin, OUTPUT);
@@ -51,5 +51,5 @@ void loop() {
     noTone(PiezoPin);
     Serial.write('0');
   }
-  delay(20);
+  delay(10);
 }
